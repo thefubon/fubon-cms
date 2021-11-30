@@ -72,7 +72,6 @@ if(!empty($_POST) ){
 
 $title	= "Fubon CMS | Editor ⚙️";
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
