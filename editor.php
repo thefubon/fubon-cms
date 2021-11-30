@@ -76,23 +76,24 @@ $title	= "Fubon CMS | Editor ⚙️";
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?= $title ?></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title><?= $title ?></title>
 	<link rel="icon" type="image/x-icon" href="//thefubon.com/favicon.ico">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 	<link rel="stylesheet" href="/assets/css/editor.css" />
 </head>
-<body class="flex min-h-screen">
+<body class="flex min-h-screen antialiased">
 
-	<div class="flex flex-col justify-between p-4 border-r">
+	<div class="flex flex-col justify-between p-4 border-r border-[#EFF2F6]">
 		<div class="flex flex-col space-y-6">
 			<a href="/" target="_blank"><img class="w-[29px]" src="/assets/img/fubon-one.svg" alt="Fubon CMS"></a>
-			<a href="#!" onclick="return newPage()" title="New Page">
+			<a class="flex flex-col space-y-1" href="#!" onclick="return newPage()" title="Add New Page">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
 					<path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
 					<path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
 				</svg>
+				<span class="text-xs">Add</span>
 			</a>
 		</div>
 		<div class="flex flex-col space-y-6">
@@ -115,21 +116,21 @@ $title	= "Fubon CMS | Editor ⚙️";
 		</div>
 	</div>
 
-	<div class="md:flex-auto max-w-[200px] flex flex-col p-4 border-r overflow-auto h-screen">
+	<div class="md:flex-auto max-w-[240px] 2xl:max-w-[320px] space-y-0.5 flex flex-col p-4 border-r border-[#EFF2F6] overflow-auto h-screen">
 		<?php foreach($pages as $key => $page):
 				$cls	= '';
 				if( ($current && $page == $current) || (!$page && $key === 0) ){
-					$cls	= 'bg-[#F2F1FF] text-[#6563FD]';
+					$cls	= 'bg-[#F2F1FF] hover:bg-[#F2F1FF] text-[#6563FD]';
 				}
 			?>
-				<a class="w-full py-2 px-4 rounded <?= $cls ?>" href="editor.php?page=<?= $page ?>"><?= ucwords( strtr($page,'-_','  ') ) ?></a>
+				<a class="w-full p-2 text-sm rounded hover:bg-[#F0F2F7] <?= $cls ?>" href="editor.php?page=<?= $page ?>"><?= ucwords( strtr($page,'-_','  ') ) ?></a>
 			<?php endforeach ?>
 	</div>
 
 	<div class="flex-1 overflow-auto h-screen relative">
 		<form method="post">
 
-			<div class="flex justify-between items-center w-full px-4 h-16 border-b bg-white sticky top-0 z-20">
+			<div class="flex justify-between items-center w-full px-6 h-16 border-b border-[#EFF2F6] bg-white sticky top-0 z-20">
 
 				<div class="flex items-center space-x-4">
 					<h2 class="text-xl font-bold"><?= ucwords( strtr($current,'-_','  ') ) ?></h2>
@@ -143,7 +144,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 				<?php endif ?>
 				</div>
 				<div class="flex space-x-4">
-					<a class="flex items-center bg-[#6563FD] text-white text-sm pt-1.5 pb-2 px-3 rounded" href="/?page=<?= $current ?>" target="_blank">
+					<a class="flex items-center bg-[#6563FD] hover:bg-[#3437B3] text-white text-sm pt-1.5 pb-2 px-3 rounded" href="/?page=<?= $current ?>" target="_blank">
 						<span class="hidden md:block mr-2">View</span>
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -151,7 +152,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 						</svg>
 					</a>
 
-					<button type="submit" class="flex items-center bg-[#33C48D] text-white text-sm pt-1.5 pb-2 px-3 rounded">
+					<button type="submit" class="flex items-center bg-[#33C48D] hover:bg-[#0B5440] text-white text-sm pt-1.5 pb-2 px-3 rounded">
 						<span class="hidden md:block mr-2">Save</span>
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
@@ -160,36 +161,36 @@ $title	= "Fubon CMS | Editor ⚙️";
 				</div>
 			</div>
 
-			<div class="p-4 space-y-4">			
-				<div class="pb-2">
-					<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Meta</h4>
+			<div class="p-6 space-y-4">			
+				<div class="pb-1">
+					<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Meta</h4>
 
-					<div class="p-4 rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd] space-y-4">
-						<div class="flex items-center">
-							<legend class="w-36 text-sm">Title</legend>
-							<input class="w-full rounded border-[#dddddd] focus:ring-0 text-sm" name="title" type="text" value="<?= @$data['title'] ?>">
+					<div class="p-4 border border-[#DFE2EF] rounded-b space-y-4">
+						<div class="space-y-1">
+							<legend class="w-36 text-xs text-[#818B95]">Title</legend>
+							<input class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="title" type="text" value="<?= @$data['title'] ?>">
 						</div>
 
-						<div class="flex items-center">
-							<legend class="w-36 text-sm">Description</legend>
-							<input class="w-full rounded border-[#dddddd] focus:ring-0 text-sm" name="description" type="text" value="<?= @$data['description'] ?>">
+						<div class="space-y-1">
+							<legend class="w-36 text-xs text-[#818B95]">Description</legend>
+							<input class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="description" type="text" value="<?= @$data['description'] ?>">
 						</div>
 						
-						<div class="flex items-center">
-							<legend class="w-36 text-sm">Keywords</legend>
-							<input class="w-full rounded border-[#dddddd] focus:ring-0 text-sm" name="keywords" type="text" value="<?= @$data['keywords'] ?>">
+						<div class="space-y-1">
+							<legend class="w-36 text-xs text-[#818B95]">Keywords</legend>
+							<input class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="keywords" type="text" value="<?= @$data['keywords'] ?>">
 						</div>
 					</div>
 				</div>
 
 				<div>
-					<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Head</h4>
-					<textarea class="w-full text-sm rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd]" name="head"><?= @$data['head'] ?></textarea>
+					<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Head</h4>
+					<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="head"><?= @$data['head'] ?></textarea>
 				</div>
 					
 					<div>
-						<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Styles</h4>
-						<textarea class="w-full text-sm rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd]" name="styles"><?= @$data['styles'] ?></textarea>
+						<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Styles</h4>
+						<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="styles"><?= @$data['styles'] ?></textarea>
 					</div>
 			
 				
@@ -198,8 +199,8 @@ $title	= "Fubon CMS | Editor ⚙️";
 				</div>
 
 				<div>
-					<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Footer</h4>
-					<textarea class="w-full rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd]" name="footer"><?= @$data['footer'] ?></textarea>
+					<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Footer</h4>
+					<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="footer"><?= @$data['footer'] ?></textarea>
 				</div>
 
 			</div>

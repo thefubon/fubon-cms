@@ -11,3 +11,19 @@
 .editor-preview-active-side {
   @apply z-20 bg-white;
 }
+
+.editor-toolbar {
+  @apply rounded rounded-b-none border border-b-0 opacity-100 hover:opacity-100 border-[#DFE2EF];
+}
+
+a.fa {
+  @apply opacity-50;
+}
+
+.CodeMirror {
+  @apply text-sm rounded rounded-t-none border border-[#DFE2EF];
+}
+
+.CodeMirror-focused {
+  @apply bg-[#FAFAFC];
+}
