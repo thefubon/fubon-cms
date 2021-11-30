@@ -118,12 +118,12 @@ $title	= "Fubon CMS | Editor ⚙️";
 
 	<div class="md:flex-auto max-w-[240px] 2xl:max-w-[320px] space-y-0.5 flex flex-col p-4 border-r border-[#EFF2F6] overflow-auto h-screen">
 		<?php foreach($pages as $key => $page):
-				$cls	= '';
+				$cls	= 'hover:bg-[#F0F2F7]';
 				if( ($current && $page == $current) || (!$page && $key === 0) ){
 					$cls	= 'bg-[#F2F1FF] hover:bg-[#F2F1FF] text-[#6563FD]';
 				}
 			?>
-				<a class="w-full p-2 text-sm rounded hover:bg-[#F0F2F7] <?= $cls ?>" href="editor.php?page=<?= $page ?>"><?= ucwords( strtr($page,'-_','  ') ) ?></a>
+				<a class="w-full p-2 text-sm rounded  <?= $cls ?>" href="editor.php?page=<?= $page ?>"><?= ucwords( strtr($page,'-_','  ') ) ?></a>
 			<?php endforeach ?>
 	</div>
 
