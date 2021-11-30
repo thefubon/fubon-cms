@@ -81,22 +81,17 @@ $title	= "Fubon CMS | Editor ⚙️";
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" type="image/x-icon" href="//thefubon.com/favicon.ico">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-	<!--<link rel="stylesheet" href="/codemirror/lib/codemirror.css">-->
-	<link rel='stylesheet' href='/assets/codemirror/theme/monokai.css'>
-	<link rel="stylesheet" href="/assets/codemirror/addon/hint/show-hint.css">
-	<style>
-		.css_editor .CodeMirror, .css_editor .CodeMirror-scroll {min-height: 48px; max-height: 150px; overflow: hidden; font-size: 14px; border: 0;}
-	</style>
 	<link rel="stylesheet" href="/assets/css/editor.css" />
 </head>
 <body class="flex min-h-screen">
 
 	<div class="flex flex-col justify-between p-4 border-r">
 		<div class="flex flex-col space-y-6">
-			<a href="/" target="_blank"><img class="w-[24px]" src="/assets/img/fubon-one.svg" alt="Fubon CMS"></a>
+			<a href="/" target="_blank"><img class="w-[29px]" src="/assets/img/fubon-one.svg" alt="Fubon CMS"></a>
 			<a href="#!" onclick="return newPage()" title="New Page">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+					<path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
+					<path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
 				</svg>
 			</a>
 		</div>
@@ -112,8 +107,9 @@ $title	= "Fubon CMS | Editor ⚙️";
 				</svg>
 			</a>
 			<a href="logout.php" title="Logout">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+					<path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"/>
+					<path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
 				</svg>
 			</a>
 		</div>
@@ -164,47 +160,46 @@ $title	= "Fubon CMS | Editor ⚙️";
 				</div>
 			</div>
 
-			<div class="p-4">			
-				<div class="mb-7 space-y-4">
-					<div>
-						<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Meta</h4>
+			<div class="p-4 space-y-4">			
+				<div class="pb-2">
+					<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Meta</h4>
 
-						<div class="p-4 rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd] space-y-4">
-							<div class="flex items-center">
-								<legend class="w-36 text-sm">Title</legend>
-								<input class="w-full rounded border-[#dddddd] focus:ring-0 text-sm" name="title" type="text" value="<?= @$data['title'] ?>">
-							</div>
+					<div class="p-4 rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd] space-y-4">
+						<div class="flex items-center">
+							<legend class="w-36 text-sm">Title</legend>
+							<input class="w-full rounded border-[#dddddd] focus:ring-0 text-sm" name="title" type="text" value="<?= @$data['title'] ?>">
+						</div>
 
-							<div class="flex items-center">
-								<legend class="w-36 text-sm">Description</legend>
-								<input class="w-full rounded border-[#dddddd] focus:ring-0 text-sm" name="description" type="text" value="<?= @$data['description'] ?>">
-							</div>
-							
-							<div class="flex items-center">
-								<legend class="w-36 text-sm">Keywords</legend>
-								<input class="w-full rounded border-[#dddddd] focus:ring-0 text-sm" name="keywords" type="text" value="<?= @$data['keywords'] ?>">
-							</div>
+						<div class="flex items-center">
+							<legend class="w-36 text-sm">Description</legend>
+							<input class="w-full rounded border-[#dddddd] focus:ring-0 text-sm" name="description" type="text" value="<?= @$data['description'] ?>">
+						</div>
+						
+						<div class="flex items-center">
+							<legend class="w-36 text-sm">Keywords</legend>
+							<input class="w-full rounded border-[#dddddd] focus:ring-0 text-sm" name="keywords" type="text" value="<?= @$data['keywords'] ?>">
 						</div>
 					</div>
-
-					<div class="">
-						<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Head</h4>
-						<textarea class="w-full text-sm rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd]" name="head"><?= @$data['head'] ?></textarea>
-					</div>
-
-					<div>
-						<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">CSS</h4>
-						<textarea id="codeeditor" name="css"><?= @$data['css'] ?></textarea>
-					</div>
 				</div>
+
+				<div>
+					<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Head</h4>
+					<textarea class="w-full text-sm rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd]" name="head"><?= @$data['head'] ?></textarea>
+				</div>
+					
+					<div>
+						<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Styles</h4>
+						<textarea class="w-full text-sm rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd]" name="styles"><?= @$data['styles'] ?></textarea>
+					</div>
+			
 				
-				<div class="html_editor">
+				<div class="pb-2">
 					<textarea id="MyID" name="content"><?= @$data['content'] ?></textarea>
 				</div>
 
 				<div>
 					<h4 class="border border-[#dddddd] border-b-0 rounded-t text-[#818B95] p-4 text-sm">Footer</h4>
-					<textarea class="w-full text-sm rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd]" name="footer"><?= @$data['footer'] ?></textarea>
+					<textarea class="w-full rounded-b border border-[#dddddd] focus:ring-0 focus:border-[#dddddd]" name="footer"><?= @$data['footer'] ?></textarea>
 				</div>
 
 			</div>
@@ -213,12 +208,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 	</div>
 
 <script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.6/jscolor.min.js"></script>
-<script src="/assets/codemirror/lib/codemirror.js"></script>
-<script src="/assets/codemirror/mode/css/css.js"></script>
-<script src="/assets/codemirror/addon/hint/show-hint.js"></script>
-<script src="/assets/codemirror/addon/hint/css-hint.js"></script>
-<script src='/assets/autosize/autosize.min.js'></script>
+<script src='/assets/js/autosize.min.js'></script>
 <script>
 	// Created New Page
 	function newPage(){
@@ -227,41 +217,19 @@ $title	= "Fubon CMS | Editor ⚙️";
 			document.location = 'editor.php?new_page=' + name;
 		}
 	}
-	// These options apply to all color pickers on the page
-	jscolor.presets.default = {
-		format:'rgba',
-		required:false,
-		previewPosition:'right',
-		sliderSize:24,
-		// width: 120,
-		// height: 120,
-	};
 	// SimpleMDE Config
 	var simplemde = new SimpleMDE({
 		element: document.getElementById("MyID"),
 		//autofocus: true,
 		//lineWrapping: false,
 		placeholder: "Type HTML here...",
+		spellChecker: false,
+		status: false,
 		renderingConfig: {
 			singleLineBreaks: false,
 			codeSyntaxHighlighting: true,
 		},
 		toolbar: ["preview", "side-by-side", "fullscreen"],
-	});
-
-	// Codemirror
-	var editor = CodeMirror.fromTextArea(document.getElementById("codeeditor"), {
-		// value: "#test {\n\tposition: absolute;\n\twidth: auto;\n\theight: 50px;\n}",
-		//lineNumbers: true,
-		//lineWrapping: true,
-		mode: "css",
-		htmlMode: true,
-		theme: "monokai",
-		tabSize: 4,
-		indentUnit: 4,
-		firstLineNumber: 1,
-		extraKeys: {"Ctrl-Space": "autocomplete"},
-		scrollbarStyle: "native",
 	});
 
 	// Textarea AutoSize - https://www.jacklmoore.com/autosize/

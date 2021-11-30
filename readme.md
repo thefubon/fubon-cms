@@ -19,8 +19,12 @@ $config	= false;
 ### Tailwind CSS --watch
 
 ```bash
+npm i
+```
+```bash
 npm run dev
 ```
+
 ### Editor Page
 ```bash
 https://example.dev/editor.php
@@ -54,6 +58,9 @@ https://example.dev/editor.php
 
 ### Color
 ```bash
+# Script
+<script src="//cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.6/jscolor.min.js"></script>
+
 # editor.php
 <input data-jscolor="{}" type="text" name="color" value="<?= @$data['color'] ?>">
 

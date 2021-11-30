@@ -21,7 +21,7 @@ extract(json_decode($str, true));
 	<meta name="description" content="<?= $description ?>">
 	<meta name="keywords" content="<?= $keywords ?>">
 	<link rel="icon" type="image/x-icon" href="//thefubon.com/favicon.ico">
-	<?= $head ?><style><?= $css ?></style>
+	<?= $head ?><style><?= $styles ?></style>
 </head>
 <body>
 	<?= $content ?>
