@@ -1008,16 +1008,6 @@ select {
   background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
 }
 
-.bg-indigo-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(99, 102, 241, var(--tw-bg-opacity));
-}
-
-.bg-\[\#F0F2F7\] {
-  --tw-bg-opacity: 1;
-  background-color: rgba(240, 242, 247, var(--tw-bg-opacity));
-}
-
 .p-4 {
   padding: 1rem;
 }
@@ -1060,10 +1050,6 @@ select {
 
 .pt-1 {
   padding-top: 0.25rem;
-}
-
-.pb-1 {
-  padding-bottom: 0.25rem;
 }
 
 .pb-8 {
@@ -1196,14 +1182,14 @@ a.fa {
   background-color: rgba(250, 250, 252, var(--tw-bg-opacity));
 }
 
-.hover\:bg-\[\#F2F1FF\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(242, 241, 255, var(--tw-bg-opacity));
-}
-
 .hover\:bg-\[\#F0F2F7\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(240, 242, 247, var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#F2F1FF\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(242, 241, 255, var(--tw-bg-opacity));
 }
 
 .hover\:bg-\[\#3437B3\]:hover {
@@ -1219,21 +1205,6 @@ a.fa {
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
-}
-
-.hover\:bg-\[\#ffcc00\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 204, 0, var(--tw-bg-opacity));
-}
-
-.hover\:bg-indigo-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(99, 102, 241, var(--tw-bg-opacity));
-}
-
-.hover\:bg-\[\#0c1222\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(12, 18, 34, var(--tw-bg-opacity));
 }
 
 .focus\:border-\[\#DFE2EF\]:focus {
