@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  [x-cloak] { display: none; }
+}
+
+.editor-toolbar.fullscreen,
+.CodeMirror-fullscreen,
+.editor-preview-active-side {
+  @apply z-20 bg-white;
+}

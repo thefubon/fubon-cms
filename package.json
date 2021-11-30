@@ -1,0 +1,29 @@
+{
+  "name": "fubon-cms",
+  "version": "1.0.0",
+  "description": "Fubon CMS 1.0 Beta",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/tailwind.css -o ./assets/css/editor.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thefubon/fubon-cms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thefubon/fubon-cms/issues"
+  },
+  "homepage": "https://github.com/thefubon/fubon-cms#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.1",
+    "tailwindcss": "^2.2.19"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/typography": "^0.4.1"
+  }
+}
