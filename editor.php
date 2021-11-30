@@ -162,7 +162,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 			</div>
 
 			<div class="p-6 space-y-4">			
-				<div class="pb-1">
+				<div class="pb-2">
 					<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Meta</h4>
 
 					<div class="p-4 border border-[#DFE2EF] rounded-b space-y-4">
