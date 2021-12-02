@@ -82,11 +82,17 @@ $title	= "Fubon CMS | Editor ⚙️";
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 	<link rel="stylesheet" href="/assets/css/editor.css" />
 </head>
-<body class="flex min-h-screen antialiased">
-<div class="flex flex-col justify-between p-4 border-r border-[#EFF2F6]">
-	<div class="flex flex-col space-y-6">
-		<a href="/" target="_blank"><img class="w-[29px]" src="/assets/img/fubon-one.svg" alt="Fubon CMS"></a>
-		<a class="flex flex-col space-y-1" href="#!" onclick="return newPage()" title="Add New Page">
+<body class="flex flex-col md:flex-row min-h-screen antialiased">
+	
+<div class="flex md:flex-col justify-between items-center p-4 border-b md:border-r border-[#EFF2F6]">
+	<div class="flex md:flex-col items-center space-x-1 md:space-x-0">
+		<button class="mobile-menu-button md:hidden mr-4">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+			</svg>
+		</button>
+		<a href="/" target="_blank"><img class="w-[18px] md:w-[28px]" src="/assets/img/fubon-one.svg" alt="Fubon CMS"></a>
+		<a class="hidden md:mt-6 md:flex md:flex-col items-center space-x-1 md:space-x-0 md:space-y-1" href="#!" onclick="return newPage()" title="Add New Page">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
 				<path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
 				<path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
@@ -94,7 +100,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 			<span class="text-xs">Add</span>
 		</a>
 	</div>
-	<div class="flex flex-col space-y-6">
+	<div class="flex md:flex-col space-x-4 md:space-x-0 md:space-y-6">
 		<a href="https://github.com/thefubon/fubon-cms" target="_blank">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
 				<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
@@ -114,7 +120,15 @@ $title	= "Fubon CMS | Editor ⚙️";
 	</div>
 </div>
 
-<div class="md:flex-auto max-w-[240px] 2xl:max-w-[320px] space-y-0.5 flex flex-col p-4 border-r border-[#EFF2F6] overflow-auto h-screen">
+<div class="sidebar fixed left-0 transform -translate-x-full md:-translate-x-0 duration-300 md:relative bg-white z-40 w-full max-w-[240px] 2xl:max-w-[320px] space-y-0.5 flex flex-col p-4 border-r border-[#EFF2F6] overflow-auto h-screen">
+	<a class="md:hidden mb-4 p-2 flex items-center space-x-2" href="#!" onclick="return newPage()" title="Add New Page">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+				<path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
+				<path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
+			</svg>
+			<span class="text-xs">Add Page</span>
+		</a>
+		
 	<?php foreach($pages as $key => $page):
 			$cls	= 'hover:bg-[#F0F2F7]';
 			if( ($current && $page == $current) || (!$page && $key === 0) ){
@@ -159,7 +173,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 			</div>
 		</div>
 
-		<div class="p-6 space-y-4">
+		<div class="p-4 md:p-6 space-y-4">
 			<div class="pb-2">
 				<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Meta</h4>
 
@@ -204,6 +218,8 @@ $title	= "Fubon CMS | Editor ⚙️";
 		</div>
 	</form>
 </div>
+
+<div class="overlay mobile-menu-overlay bg-gray-800 inset-0 fixed z-30 md:hidden opacity-75 transform translate-x-full md:-translate-x-0 duration-300 overflow-y-hidden"></div>
 
 <script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script src='/assets/js/autosize.min.js'></script>
