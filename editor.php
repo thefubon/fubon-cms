@@ -219,7 +219,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 	</form>
 </div>
 
-<div class="overlay mobile-menu-overlay bg-gray-800 inset-0 fixed z-30 md:hidden opacity-75 transform translate-x-full md:-translate-x-0 duration-300 overflow-y-hidden"></div>
+<div class="overlay mobile-menu-overlay bg-gray-800 inset-0 fixed z-20 md:hidden opacity-75 transform translate-x-full md:-translate-x-0 duration-300 overflow-y-hidden"></div>
 
 <script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script src='/assets/js/autosize.min.js'></script>

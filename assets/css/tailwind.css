@@ -9,7 +9,7 @@
 .editor-toolbar.fullscreen,
 .CodeMirror-fullscreen,
 .editor-preview-active-side {
-  @apply z-20 bg-white;
+  @apply z-40 bg-white;
 }
 
 .editor-toolbar {
