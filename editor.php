@@ -93,7 +93,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 		</button>
 		<a href="/" target="_blank"><img class="w-[18px] md:w-[28px]" src="/assets/img/fubon-one.svg" alt="Fubon CMS"></a>
 		<a class="hidden md:mt-6 md:flex md:flex-col items-center space-x-1 md:space-x-0 md:space-y-1 group" href="#!" onclick="return newPage()" title="Add New Page">
-			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 group-hover:text-[#6563FD]" viewBox="0 0 16 16">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 group-hover:text-[#6563FD] duration-300" viewBox="0 0 16 16">
 				<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 				<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
 			</svg>
@@ -122,7 +122,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 
 <div class="sidebar fixed left-0 transform -translate-x-full md:-translate-x-0 duration-300 md:relative bg-white z-40 w-full max-w-[240px] 2xl:max-w-[320px] space-y-0.5 flex flex-col p-4 border-r border-[#EFF2F6] overflow-auto h-screen">
 	<a class="md:hidden mb-4 p-2 flex items-center space-x-2 group" href="#!" onclick="return newPage()" title="Add New Page">
-			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 group-hover:text-[#6563FD]" viewBox="0 0 16 16">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 group-hover:text-[#6563FD] duration-300" viewBox="0 0 16 16">
 				<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 				<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
 			</svg>
@@ -135,7 +135,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 				$cls	= 'bg-[#F2F1FF] hover:bg-[#F2F1FF] text-[#6563FD]';
 			}
 		?>
-			<a class="w-full p-2 text-sm rounded  <?= $cls ?>" href="editor.php?page=<?= $page ?>"><?= ucwords( strtr($page,'-_','  ') ) ?></a>
+			<a class="w-full p-2 text-sm rounded duration-300 <?= $cls ?>" href="editor.php?page=<?= $page ?>"><?= ucwords( strtr($page,'-_','  ') ) ?></a>
 		<?php endforeach ?>
 </div>
 
@@ -156,7 +156,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 			<?php endif ?>
 			</div>
 			<div class="flex space-x-4">
-				<a class="flex items-center bg-[#6563FD] hover:bg-[#3437B3] text-white text-sm pt-1.5 pb-2 px-3 rounded" href="/?page=<?= $current ?>" target="_blank">
+				<a class="flex items-center bg-[#6563FD] hover:bg-[#3437B3] duration-300 text-white text-sm pt-1.5 pb-2 px-3 rounded" href="/?page=<?= $current ?>" target="_blank">
 					<span class="hidden md:block mr-2">View</span>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -164,7 +164,7 @@ $title	= "Fubon CMS | Editor ⚙️";
 					</svg>
 				</a>
 
-				<button type="submit" class="flex items-center bg-[#33C48D] hover:bg-[#0B5440] text-white text-sm pt-1.5 pb-2 px-3 rounded">
+				<button type="submit" class="flex items-center bg-[#33C48D] duration-300 hover:bg-[#0B5440] text-white text-sm pt-1.5 pb-2 px-3 rounded">
 					<span class="hidden md:block mr-2">Save</span>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
