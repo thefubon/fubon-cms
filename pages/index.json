@@ -5,6 +5,6 @@
     "head": "",
     "styles": "",
     "bodycss": "",
-    "content": "",
+    "content": "<div class=\"test\">\r\ntest\r\n<\/div>",
     "footer": ""
 }
