@@ -71,14 +71,13 @@ $title = 'Fubon CMS | Editor ⚙️';
 ?>
 <!DOCTYPE html>
 <html>
-				<head>
-					<meta charset="utf-8">
-					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-					<title><?= $title ?></title>
-					<link rel="icon" type="image/x-icon" href="//thefubon.com/favicon.ico">
-					<link rel="stylesheet" href="/assets/css/simplemde.min.css">
-					<link rel="stylesheet" href="/assets/css/editor.css" />
-				</head>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title><?= $title ?></title>
+	<link rel="icon" type="image/x-icon" href="//thefubon.com/favicon.ico">
+	<link rel="stylesheet" href="/assets/css/editor.css" />
+</head>
 <body class="flex flex-col md:flex-row min-h-screen antialiased">
 	
 <div class="flex md:flex-col justify-between items-center p-4 border-b md:border-r border-[#EFF2F6]">
@@ -234,7 +233,6 @@ $title = 'Fubon CMS | Editor ⚙️';
 
 <div class="overlay mobile-menu-overlay bg-gray-800 inset-0 fixed z-20 md:hidden opacity-75 transform translate-x-full md:-translate-x-0 duration-300 overflow-y-hidden"></div>
 
-<script src="/assets/js/simplemde.min.js"></script>
 <script src='/assets/js/autosize.min.js'></script>
 <script src='/assets/js/main.js'></script>
 </body>

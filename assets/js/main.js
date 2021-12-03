@@ -6,26 +6,6 @@ function newPage() {
   }
 }
 
-// SimpleMDE Config
-var simplemde = new SimpleMDE({
-  element: document.getElementById('MyID'),
-  //autofocus: true,
-  //lineWrapping: false,
-  placeholder: 'Type HTML here...',
-  spellChecker: false,
-  status: false,
-  renderingConfig: {
-    singleLineBreaks: false,
-    codeSyntaxHighlighting: true,
-  },
-  autosave: {
-    enabled: true,
-    unique_id: 'MyID',
-    delay: 1000,
-  },
-  //toolbar: ["preview", "side-by-side", "fullscreen"],
-})
-
 // Textarea AutoSize - https://www.jacklmoore.com/autosize/
 autosize(document.querySelectorAll('textarea'))
 
