@@ -17,7 +17,7 @@ var simplemde = new SimpleMDE({
     singleLineBreaks: false,
     codeSyntaxHighlighting: true,
   },
-  toolbar: ["preview", "side-by-side", "fullscreen"],
+  //toolbar: ["preview", "side-by-side", "fullscreen"],
 });
 
 // Textarea AutoSize - https://www.jacklmoore.com/autosize/
