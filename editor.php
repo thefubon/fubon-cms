@@ -216,15 +216,10 @@ $title = 'Fubon CMS | Editor ⚙️';
 			</div>
 			
 			<div>
-				<div class="flex justify-between items-center text-xs space-x-6 mb-2">
-					<h4 class="uppercase text-[#818B95]">Body</h4>
-					<div class="md:w-1/2 flex items-center">
-					<span class="text-gray-400">Example: class='class-name' data-name</span>
-					 <input class="w-full h-8 rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" type="text" name="bodycss" value="<?= @$data[
-          'bodycss'
-      ] ?>">
-					</div>
-				</div>
+				<h4 class="uppercase text-[#818B95] text-xs mb-2">Body</h4>
+				<input class="w-full mb-2 rounded border text-xs placeholder-gray-400 border-[#DFE2EF] focus:border-[#6563FD] focus:ring-0 focus:bg-[#FAFAFC]" type="text" name="bodycss" placeholder="Example: class='class-name' data-name" value="<?= @$data[
+        'bodycss'
+    ] ?>">
 				<textarea class="w-full min-h-[280px] text-sm rounded border border-[#DFE2EF] focus:ring-0 focus:border-[#6563FD] " name="content"><?= @$data[
         'content'
     ] ?></textarea>
