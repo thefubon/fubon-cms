@@ -1,87 +1,84 @@
 <?php
 include 'boot.php';
-if(!$_SESSION['login']){
-	header('Location: login.php');
-	exit;
+if (!$_SESSION['login']) {
+    header('Location: login.php');
+    exit();
 }
-if(!is_dir('pages'))
-{
-	if(!mkdir('pages'))
-		die('Cannot create "pages" directory, make sure is writtable.');
+if (!is_dir('pages')) {
+    if (!mkdir('pages')) {
+        die('Cannot create "pages" directory, make sure is writtable.');
+    }
 
-	if(! touch('pages/index.json') ){
-		die('Cannot write on "pages" directory, make sure is writtable.');
-	}
-
+    if (!touch('pages/index.json')) {
+        die('Cannot write on "pages" directory, make sure is writtable.');
+    }
 }
-$pages	= [];
+$pages = [];
 foreach (scandir('pages') as $key => $value) {
-	if($value == '.' || $value == '..')
-		continue;
-	$pages[]	= basename($value,'.json');
+    if ($value == '.' || $value == '..') {
+        continue;
+    }
+    $pages[] = basename($value, '.json');
 }
 
-if(empty($pages)){
-	if(! touch('pages/index.json') ){
-		die('Cannot write on "pages" directory, make sure is writtable.');
-	}
-	$pages	= array('index');
+if (empty($pages)) {
+    if (!touch('pages/index.json')) {
+        die('Cannot write on "pages" directory, make sure is writtable.');
+    }
+    $pages = ['index'];
 }
-if(isset($_GET['delete'])){
-	$file	= 'pages/' . urlencode($_GET['delete']) . '.json';
-	if(is_file($file) && !unlink($file))
-	{
-		die('Fail delete.');
-	}
-	header('Location: editor.php');
-	exit;
+if (isset($_GET['delete'])) {
+    $file = 'pages/' . urlencode($_GET['delete']) . '.json';
+    if (is_file($file) && !unlink($file)) {
+        die('Fail delete.');
+    }
+    header('Location: editor.php');
+    exit();
 }
-if(@$_GET['new_page']){
-	$new_page	= strtolower(strtr($_GET['new_page'], '	 *"+&#\'','________'));
-	if(!is_file('pages/' . $new_page . '.json'))
-	{
-		if(! touch('pages/' . $new_page . '.json') ){
-			die('Cannot write on "pages" directory, make sure is writtable.');
-		}
-	}
-	header('Location: editor.php?page=' . $_GET['new_page']);
-	exit;
+if (@$_GET['new_page']) {
+    $new_page = strtolower(strtr($_GET['new_page'], '	 *"+&#\'', '________'));
+    if (!is_file('pages/' . $new_page . '.json')) {
+        if (!touch('pages/' . $new_page . '.json')) {
+            die('Cannot write on "pages" directory, make sure is writtable.');
+        }
+    }
+    header('Location: editor.php?page=' . $_GET['new_page']);
+    exit();
 }
 
-if(! isset($_GET['page']) ){
-	header('Location: editor.php?page=' . @$pages[0]);
-	exit;
+if (!isset($_GET['page'])) {
+    header('Location: editor.php?page=' . @$pages[0]);
+    exit();
 }
 
-$current= $_GET['page'];
-if(!in_array($current, $pages))
-{
-	die("Page not found");
+$current = $_GET['page'];
+if (!in_array($current, $pages)) {
+    die('Page not found');
 }
 
-$file	= 'pages/' . urlencode($current) . '.json';
+$file = 'pages/' . urlencode($current) . '.json';
 
-if(!empty($_POST) ){
-	$data	= $_POST;
-	if(!file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT))){
-		die("Make sure directory 'pages' is writable.\n Cannot save: $file.");
-	}
-}else{
-	$data	= json_decode(file_get_contents($file), true);
+if (!empty($_POST)) {
+    $data = $_POST;
+    if (!file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT))) {
+        die("Make sure directory 'pages' is writable.\n Cannot save: $file.");
+    }
+} else {
+    $data = json_decode(file_get_contents($file), true);
 }
 
-$title	= "Fubon CMS | Editor ⚙️";
+$title = 'Fubon CMS | Editor ⚙️';
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title><?= $title ?></title>
-	<link rel="icon" type="image/x-icon" href="//thefubon.com/favicon.ico">
-	<link rel="stylesheet" href="/assets/css/simplemde.min.css">
-	<link rel="stylesheet" href="/assets/css/editor.css" />
-</head>
+				<head>
+					<meta charset="utf-8">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+					<title><?= $title ?></title>
+					<link rel="icon" type="image/x-icon" href="//thefubon.com/favicon.ico">
+					<link rel="stylesheet" href="/assets/css/simplemde.min.css">
+					<link rel="stylesheet" href="/assets/css/editor.css" />
+				</head>
 <body class="flex flex-col md:flex-row min-h-screen antialiased">
 	
 <div class="flex md:flex-col justify-between items-center p-4 border-b md:border-r border-[#EFF2F6]">
@@ -129,14 +126,18 @@ $title	= "Fubon CMS | Editor ⚙️";
 			<span class="text-xs">Add Page</span>
 		</a>
 		
-	<?php foreach($pages as $key => $page):
-			$cls	= 'hover:bg-[#F0F2F7]';
-			if( ($current && $page == $current) || (!$page && $key === 0) ){
-				$cls	= 'bg-[#F2F1FF] hover:bg-[#F2F1FF] text-[#6563FD]';
-			}
-		?>
-			<a class="w-full p-2 text-sm rounded duration-300 <?= $cls ?>" href="editor.php?page=<?= $page ?>"><?= ucwords( strtr($page,'-_','  ') ) ?></a>
-		<?php endforeach ?>
+	<?php foreach ($pages as $key => $page):
+
+     $cls = 'hover:bg-[#F0F2F7]';
+     if (($current && $page == $current) || (!$page && $key === 0)) {
+         $cls = 'bg-[#F2F1FF] hover:bg-[#F2F1FF] text-[#6563FD]';
+     }
+     ?>
+			<a class="w-full p-2 text-sm rounded duration-300 <?= $cls ?>" href="editor.php?page=<?= $page ?>"><?= ucwords(
+    strtr($page, '-_', '  ')
+) ?></a>
+		<?php
+ endforeach; ?>
 </div>
 
 <div class="flex-1 overflow-auto h-screen relative">
@@ -145,15 +146,15 @@ $title	= "Fubon CMS | Editor ⚙️";
 		<div class="flex justify-between items-center w-full px-6 h-16 border-b border-[#EFF2F6] bg-white sticky top-0 z-20">
 
 			<div class="flex items-center space-x-4">
-				<h2 class="text-xl font-bold"><?= ucwords( strtr($current,'-_','  ') ) ?></h2>
+				<h2 class="text-xl font-bold"><?= ucwords(strtr($current, '-_', '  ')) ?></h2>
 
-				<?php if($current != 'index'): ?>
+				<?php if ($current != 'index'): ?>
 				<a class="text-red-500" href="editor.php?delete=<?= $current ?>" onclick="return confirm('Delete this page?')" class="btn red">
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
 					</svg>
 				</a>
-			<?php endif ?>
+			<?php endif; ?>
 			</div>
 			<div class="flex space-x-4">
 				<a class="flex items-center bg-[#6563FD] hover:bg-[#3437B3] duration-300 text-white text-sm pt-1.5 pb-2 px-3 rounded" href="/?page=<?= $current ?>" target="_blank">
@@ -180,29 +181,39 @@ $title	= "Fubon CMS | Editor ⚙️";
 				<div class="p-4 border border-[#DFE2EF] rounded-b space-y-4">
 					<div class="space-y-1">
 						<legend class="w-36 text-xs text-[#818B95]">Title</legend>
-						<input class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="title" type="text" value="<?= @$data['title'] ?>">
+						<input class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="title" type="text" value="<?= @$data[
+          'title'
+      ] ?>">
 					</div>
 
 					<div class="space-y-1">
 						<legend class="w-36 text-xs text-[#818B95]">Description</legend>
-						<input class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="description" type="text" value="<?= @$data['description'] ?>">
+						<input class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="description" type="text" value="<?= @$data[
+          'description'
+      ] ?>">
 					</div>
 					
 					<div class="space-y-1">
 						<legend class="w-36 text-xs text-[#818B95]">Keywords</legend>
-						<input class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="keywords" type="text" value="<?= @$data['keywords'] ?>">
+						<input class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="keywords" type="text" value="<?= @$data[
+          'keywords'
+      ] ?>">
 					</div>
 				</div>
 			</div>
 
 			<div>
 				<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Head</h4>
-				<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="head"><?= @$data['head'] ?></textarea>
+				<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="head"><?= @$data[
+        'head'
+    ] ?></textarea>
 			</div>
 				
 				<div>
 					<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Styles</h4>
-					<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="styles"><?= @$data['styles'] ?></textarea>
+					<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="styles"><?= @$data[
+         'styles'
+     ] ?></textarea>
 				</div>
 		
 			
@@ -212,7 +223,9 @@ $title	= "Fubon CMS | Editor ⚙️";
 
 			<div>
 				<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Footer</h4>
-				<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="footer"><?= @$data['footer'] ?></textarea>
+				<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="footer"><?= @$data[
+        'footer'
+    ] ?></textarea>
 			</div>
 
 		</div>
