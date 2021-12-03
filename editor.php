@@ -173,7 +173,7 @@ $title = 'Fubon CMS | Editor ⚙️';
 			</div>
 		</div>
 
-		<div class="p-4 md:p-6 space-y-10 group">
+		<div>
 			<div class="pb-2">
 				<h4 class="text-[#818B95] mb-2 text-xs uppercase">Meta</h4>
 
@@ -201,21 +201,21 @@ $title = 'Fubon CMS | Editor ⚙️';
 				</div>
 			</div>
 
-			<div class="border-l-2 pl-4">
+			<div>
 				<h4 class="text-[#818B95] mb-2 text-xs uppercase">Head</h4>
 				<textarea class="w-full text-sm rounded border border-[#DFE2EF] focus:border-[#6563FD] focus:ring-0 focus:bg-[#FAFAFC]" name="head"><?= @$data[
         'head'
     ] ?></textarea>
 			</div>
 				
-			<div class="border-l-2 pl-4">
+			<div>
 				<h4 class="text-[#818B95] mb-2 text-xs uppercase">Styles</h4>
 				<textarea class="w-full text-sm rounded border border-[#DFE2EF] focus:ring-0 focus:border-[#6563FD] focus:bg-[#FAFAFC]" name="styles"><?= @$data[
         'styles'
     ] ?></textarea>
 			</div>
 			
-			<div class="border-l-2 pl-4">
+			<div>
 				<div class="flex justify-between items-center text-xs space-x-6 mb-2">
 					<h4 class="uppercase text-[#818B95]">Body</h4>
 					<div class="md:w-1/2 flex items-center">
@@ -230,7 +230,7 @@ $title = 'Fubon CMS | Editor ⚙️';
     ] ?></textarea>
 			</div>
 
-			<div class="border-l-2 pl-4">
+			<div>
 				<h4 class="text-[#818B95] mb-2 text-xs uppercase">Footer</h4>
 				<textarea class="w-full text-sm rounded border border-[#DFE2EF] focus:ring-0 focus:border-[#6563FD] focus:bg-[#FAFAFC]" name="footer"><?= @$data[
         'footer'
