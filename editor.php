@@ -217,10 +217,10 @@ $title = 'Fubon CMS | Editor ⚙️';
 			
 			<div>
 				<h4 class="uppercase text-[#818B95] text-xs mb-2">Body</h4>
-				<input class="w-full mb-2 rounded border text-xs placeholder-gray-400 border-[#DFE2EF] focus:border-[#6563FD] focus:ring-0 focus:bg-[#FAFAFC]" type="text" name="bodycss" placeholder="Example: class='class-name' data-name" value="<?= @$data[
+				<input class="w-full mb-2 rounded border text-sm placeholder-gray-400 border-[#DFE2EF] focus:border-[#6563FD] focus:ring-0 focus:bg-[#FAFAFC]" type="text" name="bodycss" placeholder="Example: class='class-name' data-name" value="<?= @$data[
         'bodycss'
     ] ?>">
-				<textarea class="w-full min-h-[280px] text-sm rounded border border-[#DFE2EF] focus:ring-0 focus:border-[#6563FD] " name="content"><?= @$data[
+				<textarea class="w-full min-h-[280px] text-sm rounded placeholder-gray-400 border border-[#DFE2EF] focus:ring-0 focus:border-[#6563FD]" placeholder="Type here..." name="content"><?= @$data[
         'content'
     ] ?></textarea>
 			</div>
