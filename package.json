@@ -4,7 +4,7 @@
   "description": "Fubon CMS 1.0 Beta",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/editor.css --watch"
+    "dev": "npx tailwindcss -i ./tailwind.css -o ./assets/css/editor.css --watch"
   },
   "repository": {
     "type": "git",

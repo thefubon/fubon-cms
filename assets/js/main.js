@@ -5,6 +5,7 @@ function newPage() {
     document.location = 'editor.php?new_page=' + name;
   }
 }
+
 // SimpleMDE Config
 var simplemde = new SimpleMDE({
   element: document.getElementById("MyID"),
@@ -16,6 +17,11 @@ var simplemde = new SimpleMDE({
   renderingConfig: {
     singleLineBreaks: false,
     codeSyntaxHighlighting: true,
+  },
+  autosave: {
+    enabled: true,
+    unique_id: "MyID",
+    delay: 1000,
   },
   //toolbar: ["preview", "side-by-side", "fullscreen"],
 });

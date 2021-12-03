@@ -22,9 +22,13 @@ extract(json_decode($str, true));
 	<title><?= $title ?></title>
 	<link rel="icon" type="image/x-icon" href="//thefubon.com/favicon.ico">
 	<?= $head ?><style><?= $styles ?></style>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 </head>
 <body>
 	<?= $content ?>
 	<?= $footer ?>
+	<script>
+		simplemde.value("This text will appear in the editor");
+	</script>
 </body>
 </html>
