@@ -19,13 +19,12 @@
   "homepage": "https://github.com/thefubon/fubon-cms#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.0",
-    "eslint-config-prettier": "^8.3.0",
     "postcss": "^8.4.1",
-    "prettier": "^2.3.2",
     "tailwindcss": "^2.2.19"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.3.4",
-    "@tailwindcss/typography": "^0.4.1"
+    "@tailwindcss/typography": "^0.4.1",
+    "prettier": "^2.5.0"
   }
 }

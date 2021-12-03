@@ -175,7 +175,7 @@ $title = 'Fubon CMS | Editor ⚙️';
 
 		<div class="p-4 md:p-6 space-y-4">
 			<div class="pb-2">
-				<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Meta</h4>
+				<h4 class="border text-[#818B95] border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Meta</h4>
 
 				<div class="p-4 border border-[#DFE2EF] rounded-b space-y-4">
 					<div class="space-y-1">
@@ -202,26 +202,35 @@ $title = 'Fubon CMS | Editor ⚙️';
 			</div>
 
 			<div>
-				<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Head</h4>
+				<h4 class="border text-[#818B95] border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Head</h4>
 				<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" name="head"><?= @$data[
         'head'
     ] ?></textarea>
 			</div>
 				
-				<div>
-					<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Styles</h4>
-					<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="styles"><?= @$data[
-         'styles'
-     ] ?></textarea>
-				</div>
-		
-			
-			<div class="pb-2">
-				<textarea id="MyID" name="content"><?= @$data['content'] ?></textarea>
-			</div>
-
 			<div>
-				<h4 class="border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Footer</h4>
+				<h4 class="border text-[#818B95] border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Styles</h4>
+				<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="styles"><?= @$data[
+        'styles'
+    ] ?></textarea>
+			</div>
+			
+			<div>
+				<div class="flex justify-between items-center border border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs space-x-6">
+					<h4 class="uppercase text-[#818B95]">Body</h4>
+					<div class="md:w-1/2 flex items-center">
+					<span class="text-gray-400">Example: class='class-name' data-name</span>
+					 <input class="w-full h-9 rounded border border-[#DFE2EF] focus:border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC]" type="text" name="bodycss" value="<?= @$data[
+          'bodycss'
+      ] ?>">
+					</div>
+				</div>
+				<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="content"><?= @$data[
+        'content'
+    ] ?></textarea>
+			</div>
+			<div>
+				<h4 class="border text-[#818B95] border-[#DFE2EF] border-b-0 rounded-t p-4 text-xs uppercase">Footer</h4>
 				<textarea class="w-full text-sm rounded-b border border-[#DFE2EF] focus:ring-0 focus:border-[#DFE2EF] focus:bg-[#FAFAFC]" name="footer"><?= @$data[
         'footer'
     ] ?></textarea>
