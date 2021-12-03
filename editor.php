@@ -220,7 +220,7 @@ $title = 'Fubon CMS | Editor ⚙️';
 				<input class="w-full mb-2 rounded border text-sm placeholder-gray-400 border-[#DFE2EF] focus:border-[#6563FD] focus:ring-0 focus:bg-[#FAFAFC]" type="text" name="bodycss" placeholder="Example: class='class-name' data-name" value="<?= @$data[
         'bodycss'
     ] ?>">
-				<textarea class="w-full min-h-[280px] text-sm rounded placeholder-gray-400 border border-[#DFE2EF] focus:ring-0 focus:border-[#6563FD]" placeholder="Enter HTML Source Code" name="content"><?= @$data[
+				<textarea class="w-full min-h-[280px] text-sm rounded placeholder-gray-400 border border-[#DFE2EF] focus:ring-0 focus:bg-[#FAFAFC] focus:border-[#6563FD]" placeholder="Enter HTML Source Code" name="content"><?= @$data[
         'content'
     ] ?></textarea>
 			</div>
