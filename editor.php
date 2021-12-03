@@ -173,7 +173,7 @@ $title = 'Fubon CMS | Editor ⚙️';
 			</div>
 		</div>
 
-		<div>
+		<div class="p-4 md:p-6 space-y-10">
 			<div class="pb-2">
 				<h4 class="text-[#818B95] mb-2 text-xs uppercase">Meta</h4>
 
